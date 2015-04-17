@@ -1,3 +1,11 @@
+connection_bd:
+    resource: "@ConnectionBDBundle/Resources/config/routing.yml"
+    prefix:   /
+
+estudiante:
+    resource: "@EstudianteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 administrador:
     resource: "@AdministradorBundle/Resources/config/routing.yml"
     prefix:   /
