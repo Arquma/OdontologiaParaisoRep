@@ -19,6 +19,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="AdministradorBundle">AdministradorBundle\AdministradorBundle</parameter>
       <parameter key="EstudianteBundle">EstudianteBundle\EstudianteBundle</parameter>
+      <parameter key="ConnectionBDBundle">ConnectionBDBundle\ConnectionBDBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -28,11 +29,11 @@
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_driver">pdo_mysql</parameter>
-    <parameter key="database_host">127.0.0.1</parameter>
-    <parameter key="database_port">null</parameter>
-    <parameter key="database_name">symfony</parameter>
-    <parameter key="database_user">root</parameter>
-    <parameter key="database_password">null</parameter>
+    <parameter key="database_host">163.178.107.130</parameter>
+    <parameter key="database_port">3306</parameter>
+    <parameter key="database_name">u-dental</parameter>
+    <parameter key="database_user">adm</parameter>
+    <parameter key="database_password">saucr.092</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -2443,11 +2444,11 @@
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
-        <argument key="host">127.0.0.1</argument>
-        <argument key="port">null</argument>
-        <argument key="dbname">symfony</argument>
-        <argument key="user">root</argument>
-        <argument key="password">null</argument>
+        <argument key="host">163.178.107.130</argument>
+        <argument key="port">3306</argument>
+        <argument key="dbname">u-dental</argument>
+        <argument key="user">adm</argument>
+        <argument key="password">saucr.092</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
@@ -2521,7 +2522,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="ConnectionBDBundle">ConnectionBDBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2534,7 +2537,21 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\xampp\htdocs\OdontologiaParaisoRep\proyectoUCROdontologia\src\ConnectionBDBundle\Resources\config\doctrine">ConnectionBDBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>ConnectionBDBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -2981,6 +2998,10 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\OdontologiaParaisoRep\proyectoUCROdontologia\src\EstudianteBundle/Resources/views</argument>
         <argument>Estudiante</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\OdontologiaParaisoRep\proyectoUCROdontologia\src\ConnectionBDBundle/Resources/views</argument>
+        <argument>ConnectionBD</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\OdontologiaParaisoRep\proyectoUCROdontologia\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

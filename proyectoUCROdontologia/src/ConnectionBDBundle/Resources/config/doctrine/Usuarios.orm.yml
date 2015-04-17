@@ -1,0 +1,17 @@
+ConnectionBDBundle\Entity\Usuarios:
+    type: entity
+    table: usuarios
+    id:
+        user:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            id: true
+        password:
+            type: string
+            nullable: false
+            length: 25
+            fixed: false
+            id: true
+    lifecycleCallbacks: {  }

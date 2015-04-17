@@ -1,0 +1,34 @@
+ConnectionBDBundle\Entity\Cita:
+    type: entity
+    table: cita
+    indexes:
+        paciente_cita_idx:
+            columns:
+                - idPaciente
+    id:
+        idcita:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idCita
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: true
+        hora:
+            type: time
+            nullable: true
+    manyToOne:
+        idpaciente:
+            targetEntity: Paciente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPaciente:
+                    referencedColumnName: cedula
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

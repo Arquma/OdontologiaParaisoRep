@@ -1,0 +1,40 @@
+ConnectionBDBundle\Entity\DienteMatriz:
+    type: entity
+    table: diente_matriz
+    indexes:
+        diente_diente_matriz_idx:
+            columns:
+                - idDiente
+    id:
+        iddienteMatriz:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idDiente_matriz
+            generator:
+                strategy: IDENTITY
+    fields:
+        cara:
+            type: integer
+            nullable: false
+            unsigned: false
+        posicion:
+            type: integer
+            nullable: false
+            unsigned: false
+        color:
+            type: integer
+            nullable: false
+            unsigned: false
+    manyToOne:
+        iddiente:
+            targetEntity: Diente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idDiente:
+                    referencedColumnName: idDiente
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

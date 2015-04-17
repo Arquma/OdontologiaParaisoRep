@@ -1,0 +1,13 @@
+ConnectionBDBundle\Entity\Expediente:
+    type: entity
+    table: expediente
+    id:
+        idexpediente:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: idExpediente
+            generator:
+                strategy: IDENTITY
+    lifecycleCallbacks: {  }
