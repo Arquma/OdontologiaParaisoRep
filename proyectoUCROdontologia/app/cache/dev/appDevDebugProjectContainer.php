@@ -25,7 +25,7 @@ class appDevDebugProjectContainer extends Container
     public function __construct()
     {
         $dir = __DIR__;
-        for ($i = 1; $i <= 4; ++$i) {
+        for ($i = 1; $i <= 5; ++$i) {
             $this->targetDirs[$i] = $dir = dirname($dir);
         }
         $this->parameters = $this->getDefaultParameters();
@@ -736,7 +736,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_80f3100a47b9ddf5d7df0de48a700d9961dbb6f3b50db1606e52efdb7e8fe9b8');
+        $instance->setNamespace('sf2orm_default_cf83724dc4f0d398765600fdbb9b0a854471ba589deb1c8428ddcd48a3230dab');
 
         return $instance;
     }
@@ -753,7 +753,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_80f3100a47b9ddf5d7df0de48a700d9961dbb6f3b50db1606e52efdb7e8fe9b8');
+        $instance->setNamespace('sf2orm_default_cf83724dc4f0d398765600fdbb9b0a854471ba589deb1c8428ddcd48a3230dab');
 
         return $instance;
     }
@@ -770,7 +770,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_80f3100a47b9ddf5d7df0de48a700d9961dbb6f3b50db1606e52efdb7e8fe9b8');
+        $instance->setNamespace('sf2orm_default_cf83724dc4f0d398765600fdbb9b0a854471ba589deb1c8428ddcd48a3230dab');
 
         return $instance;
     }
@@ -4192,7 +4192,7 @@ class appDevDebugProjectContainer extends Container
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => 'C:\\windows\\system32\\java.EXE',
+            'assetic.java.bin' => 'C:\\WINDOWS\\system32\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
