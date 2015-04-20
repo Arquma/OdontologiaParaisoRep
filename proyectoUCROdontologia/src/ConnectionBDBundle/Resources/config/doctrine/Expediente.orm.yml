@@ -1,6 +1,10 @@
 ConnectionBDBundle\Entity\Expediente:
     type: entity
     table: expediente
+    indexes:
+        paciente_expediente_idx:
+            columns:
+                - idPaciente
     id:
         idexpediente:
             type: integer
@@ -10,4 +14,14 @@ ConnectionBDBundle\Entity\Expediente:
             column: idExpediente
             generator:
                 strategy: IDENTITY
+    manyToOne:
+        idpaciente:
+            targetEntity: Paciente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPaciente:
+                    referencedColumnName: cedula
+            orphanRemoval: false
     lifecycleCallbacks: {  }
