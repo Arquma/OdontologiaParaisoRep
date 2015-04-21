@@ -7,7 +7,7 @@ ConnectionBDBundle\Entity\Paciente:
                 - cedulaOdontologo
         encargado_paciente_idx:
             columns:
-                - cedulaEncargado
+                - idEncargado
     id:
         cedula:
             type: integer
@@ -98,6 +98,15 @@ ConnectionBDBundle\Entity\Paciente:
             length: 100
             fixed: false
     manyToOne:
+        idencargado:
+            targetEntity: Encargado
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idEncargado:
+                    referencedColumnName: id
+            orphanRemoval: false
         cedulaodontologo:
             targetEntity: Odontologo
             cascade: {  }
@@ -105,15 +114,6 @@ ConnectionBDBundle\Entity\Paciente:
             inversedBy: null
             joinColumns:
                 cedulaOdontologo:
-                    referencedColumnName: cedula
-            orphanRemoval: false
-        cedulaencargado:
-            targetEntity: Encargado
-            cascade: {  }
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                cedulaEncargado:
                     referencedColumnName: cedula
             orphanRemoval: false
     lifecycleCallbacks: {  }

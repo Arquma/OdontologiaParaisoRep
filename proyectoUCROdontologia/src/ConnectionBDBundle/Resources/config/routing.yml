@@ -1,3 +1,19 @@
+connection_bd_encargado:
+    resource: "@ConnectionBDBundle/Resources/config/routing/encargado.yml"
+    prefix:   /encargado
+
+connection_bd_odontologo:
+    resource: "@ConnectionBDBundle/Resources/config/routing/odontologo.yml"
+    prefix:   /odontologo
+
 connection_bd_homepage:
     path:     /hello/{name}
     defaults: { _controller: ConnectionBDBundle:Default:index }
+
+ConnectionBDBundle_odontologo:
+    resource: "@ConnectionBDBundle/Resources/config/routing/odontologo.yml"
+    prefix:   /odontologo
+    
+ConnectionBDBundle_encargado:
+    resource: "@ConnectionBDBundle/Resources/config/routing/encargado.yml"
+    prefix:   /encargado

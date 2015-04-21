@@ -127,17 +127,134 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/hello')) {
-            // connection_bd_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'connection_bd_homepage')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\DefaultController::indexAction',));
+        // connection_bd_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'connection_bd_homepage')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/odontologo')) {
+            // odontologo
+            if (rtrim($pathinfo, '/') === '/odontologo') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'odontologo');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::indexAction',  '_route' => 'odontologo',);
             }
 
-            // estudiante_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'estudiante_homepage')), array (  '_controller' => 'EstudianteBundle\\Controller\\DefaultController::indexAction',));
+            // odontologo_show
+            if (preg_match('#^/odontologo/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'odontologo_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::showAction',));
             }
 
+            // odontologo_new
+            if ($pathinfo === '/odontologo/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::newAction',  '_route' => 'odontologo_new',);
+            }
+
+            // odontologo_create
+            if ($pathinfo === '/odontologo/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_odontologo_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::createAction',  '_route' => 'odontologo_create',);
+            }
+            not_odontologo_create:
+
+            // odontologo_edit
+            if (preg_match('#^/odontologo/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'odontologo_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::editAction',));
+            }
+
+            // odontologo_update
+            if (preg_match('#^/odontologo/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_odontologo_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'odontologo_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::updateAction',));
+            }
+            not_odontologo_update:
+
+            // odontologo_delete
+            if (preg_match('#^/odontologo/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_odontologo_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'odontologo_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::deleteAction',));
+            }
+            not_odontologo_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/encargado')) {
+            // encargado
+            if (rtrim($pathinfo, '/') === '/encargado') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'encargado');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\EncargadoController::indexAction',  '_route' => 'encargado',);
+            }
+
+            // encargado_show
+            if (preg_match('#^/encargado/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'encargado_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\EncargadoController::showAction',));
+            }
+
+            // encargado_new
+            if ($pathinfo === '/encargado/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\EncargadoController::newAction',  '_route' => 'encargado_new',);
+            }
+
+            // encargado_create
+            if ($pathinfo === '/encargado/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_encargado_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\EncargadoController::createAction',  '_route' => 'encargado_create',);
+            }
+            not_encargado_create:
+
+            // encargado_edit
+            if (preg_match('#^/encargado/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'encargado_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\EncargadoController::editAction',));
+            }
+
+            // encargado_update
+            if (preg_match('#^/encargado/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_encargado_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'encargado_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\EncargadoController::updateAction',));
+            }
+            not_encargado_update:
+
+            // encargado_delete
+            if (preg_match('#^/encargado/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_encargado_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'encargado_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\EncargadoController::deleteAction',));
+            }
+            not_encargado_delete:
+
+        }
+
+        // estudiante_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'estudiante_homepage')), array (  '_controller' => 'EstudianteBundle\\Controller\\DefaultController::indexAction',));
         }
 
         // administrador_homepage

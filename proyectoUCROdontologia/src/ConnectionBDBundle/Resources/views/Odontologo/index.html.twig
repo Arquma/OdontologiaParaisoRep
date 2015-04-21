@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Odontologo list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Correoelectronico</th>
+                <th>Practicante</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('odontologo_show', { 'id': entity.cedula }) }}">{{ entity.cedula }}</a></td>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.correoElectronico }}</td>
+                <td>{{ entity.practicante }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('odontologo_show', { 'id': entity.cedula }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('odontologo_edit', { 'id': entity.cedula }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('odontologo_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

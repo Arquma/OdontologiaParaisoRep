@@ -95,14 +95,14 @@ class Paciente
     private $sintoma;
 
     /**
+     * @var \ConnectionBDBundle\Entity\Encargado
+     */
+    private $idencargado;
+
+    /**
      * @var \ConnectionBDBundle\Entity\Odontologo
      */
     private $cedulaodontologo;
-
-    /**
-     * @var \ConnectionBDBundle\Entity\Encargado
-     */
-    private $cedulaencargado;
 
 
     /**
@@ -484,6 +484,29 @@ class Paciente
     }
 
     /**
+     * Set idencargado
+     *
+     * @param \ConnectionBDBundle\Entity\Encargado $idencargado
+     * @return Paciente
+     */
+    public function setIdencargado(\ConnectionBDBundle\Entity\Encargado $idencargado = null)
+    {
+        $this->idencargado = $idencargado;
+    
+        return $this;
+    }
+
+    /**
+     * Get idencargado
+     *
+     * @return \ConnectionBDBundle\Entity\Encargado 
+     */
+    public function getIdencargado()
+    {
+        return $this->idencargado;
+    }
+
+    /**
      * Set cedulaodontologo
      *
      * @param \ConnectionBDBundle\Entity\Odontologo $cedulaodontologo
@@ -504,28 +527,5 @@ class Paciente
     public function getCedulaodontologo()
     {
         return $this->cedulaodontologo;
-    }
-
-    /**
-     * Set cedulaencargado
-     *
-     * @param \ConnectionBDBundle\Entity\Encargado $cedulaencargado
-     * @return Paciente
-     */
-    public function setCedulaencargado(\ConnectionBDBundle\Entity\Encargado $cedulaencargado = null)
-    {
-        $this->cedulaencargado = $cedulaencargado;
-    
-        return $this;
-    }
-
-    /**
-     * Get cedulaencargado
-     *
-     * @return \ConnectionBDBundle\Entity\Encargado 
-     */
-    public function getCedulaencargado()
-    {
-        return $this->cedulaencargado;
     }
 }

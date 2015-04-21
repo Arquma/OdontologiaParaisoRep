@@ -20,6 +20,11 @@ class PlanDeTratamiento
     private $descripcion;
 
     /**
+     * @var \DateTime
+     */
+    private $fecha;
+
+    /**
      * @var \ConnectionBDBundle\Entity\Expediente
      */
     private $idexpediente;
@@ -56,6 +61,29 @@ class PlanDeTratamiento
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+    /**
+     * Set fecha
+     *
+     * @param \DateTime $fecha
+     * @return PlanDeTratamiento
+     */
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+    
+        return $this;
+    }
+
+    /**
+     * Get fecha
+     *
+     * @return \DateTime 
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
     }
 
     /**

@@ -20,6 +20,9 @@ ConnectionBDBundle\Entity\PlanDeTratamiento:
             nullable: true
             length: 200
             fixed: false
+        fecha:
+            type: date
+            nullable: false
     manyToOne:
         idexpediente:
             targetEntity: Expediente

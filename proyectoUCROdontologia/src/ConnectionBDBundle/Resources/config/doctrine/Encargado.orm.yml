@@ -2,7 +2,7 @@ ConnectionBDBundle\Entity\Encargado:
     type: entity
     table: encargado
     id:
-        cedula:
+        id:
             type: integer
             nullable: false
             unsigned: false
@@ -12,12 +12,16 @@ ConnectionBDBundle\Entity\Encargado:
     fields:
         nombre:
             type: string
-            nullable: true
+            nullable: false
             length: 45
             fixed: false
         relacion:
             type: string
-            nullable: true
+            nullable: false
             length: 45
             fixed: false
+        cedula:
+            type: integer
+            nullable: false
+            unsigned: false
     lifecycleCallbacks: {  }

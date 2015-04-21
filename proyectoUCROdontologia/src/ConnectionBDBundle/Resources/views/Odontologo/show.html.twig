@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Odontologo</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Cedula</th>
+                <td>{{ entity.cedula }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Correoelectronico</th>
+                <td>{{ entity.correoElectronico }}</td>
+            </tr>
+            <tr>
+                <th>Practicante</th>
+                <td>{{ entity.practicante }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('odontologo') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('odontologo_edit', { 'id': entity.cedula }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

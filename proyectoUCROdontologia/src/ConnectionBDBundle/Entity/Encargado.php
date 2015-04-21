@@ -12,7 +12,7 @@ class Encargado
     /**
      * @var integer
      */
-    private $cedula;
+    private $id;
 
     /**
      * @var string
@@ -24,15 +24,20 @@ class Encargado
      */
     private $relacion;
 
+    /**
+     * @var integer
+     */
+    private $cedula;
+
 
     /**
-     * Get cedula
+     * Get id
      *
      * @return integer 
      */
-    public function getCedula()
+    public function getId()
     {
-        return $this->cedula;
+        return $this->id;
     }
 
     /**
@@ -79,5 +84,28 @@ class Encargado
     public function getRelacion()
     {
         return $this->relacion;
+    }
+
+    /**
+     * Set cedula
+     *
+     * @param integer $cedula
+     * @return Encargado
+     */
+    public function setCedula($cedula)
+    {
+        $this->cedula = $cedula;
+    
+        return $this;
+    }
+
+    /**
+     * Get cedula
+     *
+     * @return integer 
+     */
+    public function getCedula()
+    {
+        return $this->cedula;
     }
 }
