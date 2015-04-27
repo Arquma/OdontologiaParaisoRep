@@ -2,12 +2,11 @@ ConnectionBDBundle\Entity\TratamientoGeneral:
     type: entity
     table: tratamiento_general
     id:
-        idgeneral:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idGeneral
             generator:
                 strategy: IDENTITY
     fields:

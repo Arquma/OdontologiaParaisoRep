@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\HistorialMedico:
             columns:
                 - idExpediente
     id:
-        idhistorialMedico:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idHistorial_medico
             generator:
                 strategy: IDENTITY
     fields:
@@ -366,6 +365,6 @@ ConnectionBDBundle\Entity\HistorialMedico:
             inversedBy: null
             joinColumns:
                 idExpediente:
-                    referencedColumnName: idExpediente
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

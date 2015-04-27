@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\ExamenRadiologico:
             columns:
                 - idExpediente
     id:
-        idexamenRadiologico:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idExamen_radiologico
             generator:
                 strategy: IDENTITY
     fields:
@@ -103,6 +102,6 @@ ConnectionBDBundle\Entity\ExamenRadiologico:
             inversedBy: null
             joinColumns:
                 idExpediente:
-                    referencedColumnName: idExpediente
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

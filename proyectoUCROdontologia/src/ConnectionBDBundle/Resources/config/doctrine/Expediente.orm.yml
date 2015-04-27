@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\Expediente:
             columns:
                 - idPaciente
     id:
-        idexpediente:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idExpediente
             generator:
                 strategy: IDENTITY
     manyToOne:
@@ -22,6 +21,6 @@ ConnectionBDBundle\Entity\Expediente:
             inversedBy: null
             joinColumns:
                 idPaciente:
-                    referencedColumnName: cedula
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

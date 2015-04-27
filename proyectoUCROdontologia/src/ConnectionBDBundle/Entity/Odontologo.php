@@ -12,7 +12,7 @@ class Odontologo
     /**
      * @var integer
      */
-    private $cedula;
+    private $id;
 
     /**
      * @var string
@@ -34,15 +34,20 @@ class Odontologo
      */
     private $practicante;
 
+    /**
+     * @var string
+     */
+    private $cedula;
+
 
     /**
-     * Get cedula
+     * Get id
      *
      * @return integer 
      */
-    public function getCedula()
+    public function getId()
     {
-        return $this->cedula;
+        return $this->id;
     }
 
     /**
@@ -135,5 +140,28 @@ class Odontologo
     public function getPracticante()
     {
         return $this->practicante;
+    }
+
+    /**
+     * Set cedula
+     *
+     * @param string $cedula
+     * @return Odontologo
+     */
+    public function setCedula($cedula)
+    {
+        $this->cedula = $cedula;
+    
+        return $this;
+    }
+
+    /**
+     * Get cedula
+     *
+     * @return string 
+     */
+    public function getCedula()
+    {
+        return $this->cedula;
     }
 }

@@ -21,7 +21,8 @@ ConnectionBDBundle\Entity\Encargado:
             length: 45
             fixed: false
         cedula:
-            type: integer
+            type: string
             nullable: false
-            unsigned: false
+            length: 45
+            fixed: false
     lifecycleCallbacks: {  }

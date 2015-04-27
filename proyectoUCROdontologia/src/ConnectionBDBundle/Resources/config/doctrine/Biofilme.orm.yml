@@ -5,29 +5,31 @@ ConnectionBDBundle\Entity\Biofilme:
         diente_biofilme_idx:
             columns:
                 - idDiente
-    id:
+    id: {  }
+    fields:
         posicion:
             type: integer
-            nullable: false
+            nullable: true
             unsigned: false
-            id: true
-            generator:
-                strategy: IDENTITY
-    fields:
         placa:
             type: boolean
             nullable: true
         fecha:
             type: date
             nullable: true
-    manyToOne:
         iddiente:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: idDiente
+    oneToOne:
+        id:
             targetEntity: Diente
             cascade: {  }
             mappedBy: null
             inversedBy: null
             joinColumns:
-                idDiente:
-                    referencedColumnName: idDiente
+                id:
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

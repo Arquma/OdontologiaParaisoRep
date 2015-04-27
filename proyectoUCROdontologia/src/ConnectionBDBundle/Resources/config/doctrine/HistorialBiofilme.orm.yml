@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\HistorialBiofilme:
             columns:
                 - idExpediente
     id:
-        idhistorialBiofilme:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idHistorial_biofilme
             generator:
                 strategy: IDENTITY
     fields:
@@ -31,6 +30,6 @@ ConnectionBDBundle\Entity\HistorialBiofilme:
             inversedBy: null
             joinColumns:
                 idExpediente:
-                    referencedColumnName: idExpediente
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

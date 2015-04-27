@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\Cita:
             columns:
                 - idPaciente
     id:
-        idcita:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idCita
             generator:
                 strategy: IDENTITY
     fields:
@@ -29,6 +28,6 @@ ConnectionBDBundle\Entity\Cita:
             inversedBy: null
             joinColumns:
                 idPaciente:
-                    referencedColumnName: cedula
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

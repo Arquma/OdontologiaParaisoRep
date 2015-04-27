@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\Diente:
             columns:
                 - idDentadura
     id:
-        iddiente:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idDiente
             generator:
                 strategy: IDENTITY
     fields:
@@ -35,6 +34,6 @@ ConnectionBDBundle\Entity\Diente:
             inversedBy: null
             joinColumns:
                 idDentadura:
-                    referencedColumnName: idDentandura
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

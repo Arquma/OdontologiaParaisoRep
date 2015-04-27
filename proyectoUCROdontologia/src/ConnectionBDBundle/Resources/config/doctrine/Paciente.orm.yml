@@ -4,12 +4,12 @@ ConnectionBDBundle\Entity\Paciente:
     indexes:
         odontologo_paciente_idx:
             columns:
-                - cedulaOdontologo
+                - idOdontologo
         encargado_paciente_idx:
             columns:
                 - idEncargado
     id:
-        cedula:
+        id:
             type: integer
             nullable: false
             unsigned: false
@@ -17,6 +17,11 @@ ConnectionBDBundle\Entity\Paciente:
             generator:
                 strategy: IDENTITY
     fields:
+        cedula:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
         fechaDeIngreso:
             type: date
             nullable: false
@@ -107,13 +112,13 @@ ConnectionBDBundle\Entity\Paciente:
                 idEncargado:
                     referencedColumnName: id
             orphanRemoval: false
-        cedulaodontologo:
+        idodontologo:
             targetEntity: Odontologo
             cascade: {  }
             mappedBy: null
             inversedBy: null
             joinColumns:
-                cedulaOdontologo:
-                    referencedColumnName: cedula
+                idOdontologo:
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

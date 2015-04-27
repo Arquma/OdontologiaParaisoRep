@@ -6,8 +6,8 @@
     <table class="record_properties">
         <tbody>
             <tr>
-                <th>Cedula</th>
-                <td>{{ entity.cedula }}</td>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
             </tr>
             <tr>
                 <th>Nombre</th>
@@ -25,6 +25,10 @@
                 <th>Practicante</th>
                 <td>{{ entity.practicante }}</td>
             </tr>
+            <tr>
+                <th>Cedula</th>
+                <td>{{ entity.cedula }}</td>
+            </tr>
         </tbody>
     </table>
 
@@ -35,7 +39,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ path('odontologo_edit', { 'id': entity.cedula }) }}">
+        <a href="{{ path('odontologo_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>

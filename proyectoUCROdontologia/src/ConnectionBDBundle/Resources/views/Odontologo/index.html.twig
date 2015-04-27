@@ -6,29 +6,31 @@
     <table class="records_list">
         <thead>
             <tr>
-                <th>Cedula</th>
+                <th>Id</th>
                 <th>Nombre</th>
                 <th>Telefono</th>
                 <th>Correoelectronico</th>
                 <th>Practicante</th>
+                <th>Cedula</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('odontologo_show', { 'id': entity.cedula }) }}">{{ entity.cedula }}</a></td>
+                <td><a href="{{ path('odontologo_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.telefono }}</td>
                 <td>{{ entity.correoElectronico }}</td>
                 <td>{{ entity.practicante }}</td>
+                <td>{{ entity.cedula }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('odontologo_show', { 'id': entity.cedula }) }}">show</a>
+                        <a href="{{ path('odontologo_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('odontologo_edit', { 'id': entity.cedula }) }}">edit</a>
+                        <a href="{{ path('odontologo_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>

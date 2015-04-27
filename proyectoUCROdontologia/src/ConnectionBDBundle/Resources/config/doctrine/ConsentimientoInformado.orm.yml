@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\ConsentimientoInformado:
             columns:
                 - idExpediente
     id:
-        idconsentimiento:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idConsentimiento
             generator:
                 strategy: IDENTITY
     fields:
@@ -29,6 +28,6 @@ ConnectionBDBundle\Entity\ConsentimientoInformado:
             inversedBy: null
             joinColumns:
                 idExpediente:
-                    referencedColumnName: idExpediente
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

@@ -5,19 +5,18 @@ ConnectionBDBundle\Entity\TratamientoEfectuado:
         expediente_tratamiento_efectuado_idx:
             columns:
                 - idExpediente
-        tratamiento_general_efectuado_idx:
-            columns:
-                - idTratamiento
         odontologo_tramiento_idx:
             columns:
-                - cedulaOdontologo
+                - idOdontologo
+        tratamiento_general_tratamiento_efecta_idx:
+            columns:
+                - idTratamiento
     id:
-        idtratamientoEfectuado:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idTratamiento_efectuado
             generator:
                 strategy: IDENTITY
     fields:
@@ -42,7 +41,16 @@ ConnectionBDBundle\Entity\TratamientoEfectuado:
             inversedBy: null
             joinColumns:
                 idExpediente:
-                    referencedColumnName: idExpediente
+                    referencedColumnName: id
+            orphanRemoval: false
+        idodontologo:
+            targetEntity: Odontologo
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idOdontologo:
+                    referencedColumnName: id
             orphanRemoval: false
         idtratamiento:
             targetEntity: TratamientoGeneral
@@ -51,15 +59,6 @@ ConnectionBDBundle\Entity\TratamientoEfectuado:
             inversedBy: null
             joinColumns:
                 idTratamiento:
-                    referencedColumnName: idGeneral
-            orphanRemoval: false
-        cedulaodontologo:
-            targetEntity: Odontologo
-            cascade: {  }
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                cedulaOdontologo:
-                    referencedColumnName: cedula
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

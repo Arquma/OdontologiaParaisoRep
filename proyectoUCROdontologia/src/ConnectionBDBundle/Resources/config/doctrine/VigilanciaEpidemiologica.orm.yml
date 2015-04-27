@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\VigilanciaEpidemiologica:
             columns:
                 - idExpediente
     id:
-        idvigilancia:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idVigilancia
             generator:
                 strategy: IDENTITY
     fields:
@@ -124,6 +123,6 @@ ConnectionBDBundle\Entity\VigilanciaEpidemiologica:
             inversedBy: null
             joinColumns:
                 idExpediente:
-                    referencedColumnName: idExpediente
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

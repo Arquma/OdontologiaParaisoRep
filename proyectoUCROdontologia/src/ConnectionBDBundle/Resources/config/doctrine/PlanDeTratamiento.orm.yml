@@ -6,12 +6,11 @@ ConnectionBDBundle\Entity\PlanDeTratamiento:
             columns:
                 - idExpediente
     id:
-        idtratamiento:
+        id:
             type: integer
             nullable: false
             unsigned: false
             id: true
-            column: idTratamiento
             generator:
                 strategy: IDENTITY
     fields:
@@ -31,6 +30,6 @@ ConnectionBDBundle\Entity\PlanDeTratamiento:
             inversedBy: null
             joinColumns:
                 idExpediente:
-                    referencedColumnName: idExpediente
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }
