@@ -19,6 +19,7 @@ class OdontologoType extends AbstractType
             ->add('telefono')
             ->add('correoElectronico')
             ->add('practicante')
+            ->add('cedula')
         ;
     }
     

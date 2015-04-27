@@ -108,4 +108,7 @@ class Encargado
     {
         return $this->cedula;
     }
+    public function __toString() {
+        return $this->getNombre();
+    }
 }

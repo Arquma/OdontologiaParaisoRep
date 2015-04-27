@@ -556,4 +556,7 @@ class Paciente
     {
         return $this->idodontologo;
     }
+      public function __toString() {
+        return $this->getNombre(). " ".$this->getCedula();
+    }
 }

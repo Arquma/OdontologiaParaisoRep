@@ -127,6 +127,369 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/examenradiologico')) {
+            // examenradiologico
+            if (rtrim($pathinfo, '/') === '/examenradiologico') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'examenradiologico');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::indexAction',  '_route' => 'examenradiologico',);
+            }
+
+            // examenradiologico_show
+            if (preg_match('#^/examenradiologico/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'examenradiologico_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::showAction',));
+            }
+
+            // examenradiologico_new
+            if ($pathinfo === '/examenradiologico/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::newAction',  '_route' => 'examenradiologico_new',);
+            }
+
+            // examenradiologico_create
+            if ($pathinfo === '/examenradiologico/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_examenradiologico_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::createAction',  '_route' => 'examenradiologico_create',);
+            }
+            not_examenradiologico_create:
+
+            // examenradiologico_edit
+            if (preg_match('#^/examenradiologico/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'examenradiologico_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::editAction',));
+            }
+
+            // examenradiologico_update
+            if (preg_match('#^/examenradiologico/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_examenradiologico_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'examenradiologico_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::updateAction',));
+            }
+            not_examenradiologico_update:
+
+            // examenradiologico_delete
+            if (preg_match('#^/examenradiologico/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_examenradiologico_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'examenradiologico_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::deleteAction',));
+            }
+            not_examenradiologico_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/historialmedico')) {
+            // historialmedico
+            if (rtrim($pathinfo, '/') === '/historialmedico') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'historialmedico');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::indexAction',  '_route' => 'historialmedico',);
+            }
+
+            // historialmedico_show
+            if (preg_match('#^/historialmedico/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'historialmedico_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::showAction',));
+            }
+
+            // historialmedico_new
+            if ($pathinfo === '/historialmedico/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::newAction',  '_route' => 'historialmedico_new',);
+            }
+
+            // historialmedico_create
+            if ($pathinfo === '/historialmedico/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_historialmedico_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::createAction',  '_route' => 'historialmedico_create',);
+            }
+            not_historialmedico_create:
+
+            // historialmedico_edit
+            if (preg_match('#^/historialmedico/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'historialmedico_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::editAction',));
+            }
+
+            // historialmedico_update
+            if (preg_match('#^/historialmedico/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_historialmedico_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'historialmedico_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::updateAction',));
+            }
+            not_historialmedico_update:
+
+            // historialmedico_delete
+            if (preg_match('#^/historialmedico/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_historialmedico_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'historialmedico_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::deleteAction',));
+            }
+            not_historialmedico_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/p')) {
+            if (0 === strpos($pathinfo, '/plandetratamiento')) {
+                // plandetratamiento
+                if (rtrim($pathinfo, '/') === '/plandetratamiento') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'plandetratamiento');
+                    }
+
+                    return array (  '_controller' => 'ConnectionBDBundle\\Controller\\PlanDeTratamientoController::indexAction',  '_route' => 'plandetratamiento',);
+                }
+
+                // plandetratamiento_show
+                if (preg_match('#^/plandetratamiento/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'plandetratamiento_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PlanDeTratamientoController::showAction',));
+                }
+
+                // plandetratamiento_new
+                if ($pathinfo === '/plandetratamiento/new') {
+                    return array (  '_controller' => 'ConnectionBDBundle\\Controller\\PlanDeTratamientoController::newAction',  '_route' => 'plandetratamiento_new',);
+                }
+
+                // plandetratamiento_create
+                if ($pathinfo === '/plandetratamiento/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_plandetratamiento_create;
+                    }
+
+                    return array (  '_controller' => 'ConnectionBDBundle\\Controller\\PlanDeTratamientoController::createAction',  '_route' => 'plandetratamiento_create',);
+                }
+                not_plandetratamiento_create:
+
+                // plandetratamiento_edit
+                if (preg_match('#^/plandetratamiento/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'plandetratamiento_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PlanDeTratamientoController::editAction',));
+                }
+
+                // plandetratamiento_update
+                if (preg_match('#^/plandetratamiento/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_plandetratamiento_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'plandetratamiento_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PlanDeTratamientoController::updateAction',));
+                }
+                not_plandetratamiento_update:
+
+                // plandetratamiento_delete
+                if (preg_match('#^/plandetratamiento/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_plandetratamiento_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'plandetratamiento_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PlanDeTratamientoController::deleteAction',));
+                }
+                not_plandetratamiento_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/paciente')) {
+                // paciente
+                if (rtrim($pathinfo, '/') === '/paciente') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'paciente');
+                    }
+
+                    return array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::indexAction',  '_route' => 'paciente',);
+                }
+
+                // paciente_show
+                if (preg_match('#^/paciente/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'paciente_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::showAction',));
+                }
+
+                // paciente_new
+                if ($pathinfo === '/paciente/new') {
+                    return array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::newAction',  '_route' => 'paciente_new',);
+                }
+
+                // paciente_create
+                if ($pathinfo === '/paciente/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_paciente_create;
+                    }
+
+                    return array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::createAction',  '_route' => 'paciente_create',);
+                }
+                not_paciente_create:
+
+                // paciente_edit
+                if (preg_match('#^/paciente/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'paciente_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::editAction',));
+                }
+
+                // paciente_update
+                if (preg_match('#^/paciente/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_paciente_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'paciente_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::updateAction',));
+                }
+                not_paciente_update:
+
+                // paciente_delete
+                if (preg_match('#^/paciente/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_paciente_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'paciente_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::deleteAction',));
+                }
+                not_paciente_delete:
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/expediente')) {
+            // expediente
+            if (rtrim($pathinfo, '/') === '/expediente') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'expediente');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExpedienteController::indexAction',  '_route' => 'expediente',);
+            }
+
+            // expediente_show
+            if (preg_match('#^/expediente/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'expediente_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExpedienteController::showAction',));
+            }
+
+            // expediente_new
+            if ($pathinfo === '/expediente/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExpedienteController::newAction',  '_route' => 'expediente_new',);
+            }
+
+            // expediente_create
+            if ($pathinfo === '/expediente/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_expediente_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExpedienteController::createAction',  '_route' => 'expediente_create',);
+            }
+            not_expediente_create:
+
+            // expediente_edit
+            if (preg_match('#^/expediente/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'expediente_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExpedienteController::editAction',));
+            }
+
+            // expediente_update
+            if (preg_match('#^/expediente/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_expediente_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'expediente_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExpedienteController::updateAction',));
+            }
+            not_expediente_update:
+
+            // expediente_delete
+            if (preg_match('#^/expediente/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_expediente_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'expediente_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExpedienteController::deleteAction',));
+            }
+            not_expediente_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/tratamientogeneral')) {
+            // tratamientogeneral
+            if (rtrim($pathinfo, '/') === '/tratamientogeneral') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'tratamientogeneral');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\TratamientoGeneralController::indexAction',  '_route' => 'tratamientogeneral',);
+            }
+
+            // tratamientogeneral_show
+            if (preg_match('#^/tratamientogeneral/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tratamientogeneral_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\TratamientoGeneralController::showAction',));
+            }
+
+            // tratamientogeneral_new
+            if ($pathinfo === '/tratamientogeneral/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\TratamientoGeneralController::newAction',  '_route' => 'tratamientogeneral_new',);
+            }
+
+            // tratamientogeneral_create
+            if ($pathinfo === '/tratamientogeneral/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_tratamientogeneral_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\TratamientoGeneralController::createAction',  '_route' => 'tratamientogeneral_create',);
+            }
+            not_tratamientogeneral_create:
+
+            // tratamientogeneral_edit
+            if (preg_match('#^/tratamientogeneral/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tratamientogeneral_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\TratamientoGeneralController::editAction',));
+            }
+
+            // tratamientogeneral_update
+            if (preg_match('#^/tratamientogeneral/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_tratamientogeneral_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tratamientogeneral_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\TratamientoGeneralController::updateAction',));
+            }
+            not_tratamientogeneral_update:
+
+            // tratamientogeneral_delete
+            if (preg_match('#^/tratamientogeneral/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_tratamientogeneral_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tratamientogeneral_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\TratamientoGeneralController::deleteAction',));
+            }
+            not_tratamientogeneral_delete:
+
+        }
+
         // connection_bd_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'connection_bd_homepage')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\DefaultController::indexAction',));
