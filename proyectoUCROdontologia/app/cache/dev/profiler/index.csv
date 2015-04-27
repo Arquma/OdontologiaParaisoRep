@@ -478,3 +478,7 @@ d8c3bd,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/p
 69c326,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/plandetratamiento/,1430161904,
 b59a38,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/plandetratamiento/new,1430161921,ff7d86
 ff7d86,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/plandetratamiento/new,1430161921,
+e99f8a,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/historialmedico,1430162229,
+d89be1,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/historialmedico/,1430162230,
+b432e9,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/historialmedico/new,1430162250,c29855
+c29855,::1,GET,http://localhost/Clinica/ProyectoUCROdontologia/web/app_dev.php/historialmedico/new,1430162250,

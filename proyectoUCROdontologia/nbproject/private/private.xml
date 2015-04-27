@@ -4,11 +4,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/OdontologiaParaisoRep/proyectoUCROdontologia/src/AdministradorBundle/Resources/views/Default/administrador_menu_vertical.html.twig</file>
-            <file>file:/C:/xampp/htdocs/OdontologiaParaisoRep/proyectoUCROdontologia/src/AdministradorBundle/Resources/views/Default/administrador_footer.html.twig</file>
-            <file>file:/C:/xampp/htdocs/OdontologiaParaisoRep/proyectoUCROdontologia/src/AdministradorBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/OdontologiaParaisoRep/proyectoUCROdontologia/app/config/parameters.yml</file>
-            <file>file:/C:/xampp/htdocs/OdontologiaParaisoRep/proyectoUCROdontologia/src/AdministradorBundle/Resources/views/Default/administrador_header.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Clinica/proyectoUCROdontologia/src/ConnectionBDBundle/Entity/Encargado.php</file>
+            <file>file:/C:/xampp/htdocs/Clinica/proyectoUCROdontologia/src/ConnectionBDBundle/Entity/Expediente.php</file>
+            <file>file:/C:/xampp/htdocs/Clinica/proyectoUCROdontologia/src/ConnectionBDBundle/Entity/Paciente.php</file>
+            <file>file:/C:/xampp/htdocs/Clinica/proyectoUCROdontologia/src/ConnectionBDBundle/Controller/PacienteController.php</file>
         </group>
     </open-files>
 </project-private>

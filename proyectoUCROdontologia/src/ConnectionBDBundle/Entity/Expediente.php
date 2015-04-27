@@ -6,7 +6,7 @@ use ConnectionBDBundle\Entity\Paciente;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
+/**KATHERINE
  * Expediente
  */
 class Expediente
